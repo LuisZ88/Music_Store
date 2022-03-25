@@ -1,8 +1,10 @@
 import { useEffect, useReducer, useState } from "react";
+import Cookies from 'universal-cookie'
 import CartContext from "./cart-context";
+const cookies = new Cookies()
 const defaultCartState = {
-  items: [],
-  totalAmount: 0,
+  items: cookies.get('items') || [],
+  totalAmount: cookies.get('totalAmount') || 0,
 };
 const cartReducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
@@ -47,13 +49,15 @@ const cartReducer = (state, action) => {
 };
 
 const CartProvider = (props) => {
-  useEffect(()=>{
-
-  },[])
+  
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
     defaultCartState
   );
+  useEffect(()=>{
+    cookies.set('items', cartState.items, {path:'/'})
+    cookies.set('totalAmount', cartState.totalAmount, {path:'/'})
+  },[cartState.items])
   const addItemToCartHandler = (item) => {
     dispatchCartAction({
       type: "ADD_ITEM",

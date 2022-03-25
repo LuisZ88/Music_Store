@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import Cart from "./Cart";
 import AuthContext from "../context/auth-context";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import CartContext from "../Store/cart-context";
@@ -32,7 +31,7 @@ const NavBar = () => {
       ><Container>
         <Nav className="justify-content-space-around">
 
-            <NavLink className="text-decoration-none text-light fs-4 me-3" to="/">
+            <NavLink className="text-decoration-none text-light fs-4 me-3" to="/search">
               <img
                 alt=""
                 src="https://res.cloudinary.com/pruebasmern/image/upload/v1647445325/Music%20Shop/logo_jkade6.png"
