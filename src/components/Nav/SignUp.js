@@ -28,7 +28,8 @@ const SignUp = () => {
       formInfo
     );
     if (response.data.success === true) {
-      authCtx.logIn(response.data.token, response.data.name,response.data.role );
+      const expirationTime = new Date((new Date().getTime()+ (+response.data.expiresIn)))
+      authCtx.logIn(response.data.token, response.data.name,response.data.role, expirationTime.toISOString() );
     }
     if (response.data.success === false) {
       console.log(response.data);

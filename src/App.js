@@ -10,10 +10,11 @@ import Login from "./components/Nav/Login";
 import PrivateClient from "./components/Nav/PrivateClient";
 import PrivateAdmin from "./components/Nav/PrivateAdmin";
 import ProductPage from "./components/Products/ProductPage";
+import CartProvider from "./components/Store/CartProvider";
 
 function App() {
   return (
- <>
+  <CartProvider>
       <Navbar />
       <Routes>
         <Route path="/admin" element={<PrivateAdmin />}>
@@ -26,7 +27,7 @@ function App() {
         <Route path="/search" element={<SearchBar />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
-      </>
+      </CartProvider>
   );
 }
 

@@ -4,8 +4,14 @@ import { NavLink } from "react-router-dom";
 import Cart from "./Cart";
 import AuthContext from "../context/auth-context";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
+import CartContext from "../Store/cart-context";
+import Carttest from "../Products/CartTestp";
 
 const NavBar = () => {
+  const cartCtx = useContext(CartContext)
+  const numberOfCartItems = cartCtx.items.reduce((curNumber, item)=> {
+    return curNumber + item.amount;
+  }, 0);
   const AuthCtx = useContext(AuthContext);
   const userName = AuthCtx.name;
   const [cartIsShow, setCartIsShow] = useState(false);
@@ -139,9 +145,9 @@ const NavBar = () => {
             height="30"
             
             onClick={showCartHandleFunction}
-          /><span className="badge_cart">3</span></Nav>
+          /><span className="badge_cart">{numberOfCartItems}</span></Nav>
             
-            {AuthCtx.role === "admin" ? (
+            {AuthCtx.role === "admin" && (
               <Nav>
                 <NavLink
                   to="/admin/newproduct"
@@ -151,7 +157,7 @@ const NavBar = () => {
                   Nuevo producto
                 </NavLink>
               </Nav>
-            ) : <></>}
+            ) }
             
 
             {userName ? (
@@ -169,7 +175,7 @@ const NavBar = () => {
                   />{" "}
                   {userName}
                   {"     "}
-                  <Button onClick={AuthCtx.logout}>Cerrar sesión</Button>
+                  <Button variant="transparent" onClick={AuthCtx.logout}>Cerrar sesión</Button>
                 </NavLink>
               </>
             ) : (<Nav className="justify-content-center">
@@ -205,7 +211,7 @@ const NavBar = () => {
                 Tienda
               </NavLink>
             </Nav>
-          {cartIsShow ? <Cart onHide={hideCartHandleFunction} /> : <></>}
+          {cartIsShow && <Carttest onHide={hideCartHandleFunction} />}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       </Container>
       </Navbar>

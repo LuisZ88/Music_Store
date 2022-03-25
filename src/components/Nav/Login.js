@@ -24,7 +24,8 @@ const Login = () => {
       formInfo
     );
     if (response.data.success === true) {
-      authCtx.logIn(response.data.token, response.data.name, response.data.role);
+      const expirationTime = new Date((new Date().getTime()+ (+response.data.expiresIn) * 1000))
+      authCtx.logIn(response.data.token, response.data.name, response.data.role, expirationTime.toISOString());
       console.log(response.data)
     }
     if (response.data.success === false) {

@@ -32,7 +32,7 @@ const ProductForm = () => {
   };
   return (
     <>
-      <Container className="bg-dark pt-3 pb-4 mt-1 mb col-lg-6 bg-dark text-light">
+      <Container className="bg-dark pt-3 pb-4 mt-1 mb col-lg-6 rounded">
         <Form onSubmit={submitHandler} ref={inputRef}>
           <FloatingLabel
             controlId="name"
@@ -100,11 +100,11 @@ const ProductForm = () => {
           <Button type="submit">Crear Producto</Button>
         </Form>
       </Container>
-      {info !== undefined ? (
+      {info !== undefined && (
         <ModalCard content={<ProductCard datos={info} />}></ModalCard>
-      ) : (
-        <></>
-      )}
+      )
+       
+      }
     </>
   );
 };

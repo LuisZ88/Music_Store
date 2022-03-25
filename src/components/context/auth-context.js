@@ -5,11 +5,19 @@ const AuthContext = React.createContext({
   isLoggenIn: false,
   name: "",
   logout: () => {},
-  logIn: (token,name, role) => {},
+  logIn: (token,name, role, expirationTime) => {},
   role: "",
+  expiresIn: "",
 });
-
+// const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
+const calculateRemainingTime = (expirationTime) =>{
+  const currentTime = new Date().getTime();
+  const adjExpirationTime = new Date(expirationTime).getTime()
+  const remainingDuration= adjExpirationTime - currentTime;
+  return remainingDuration
+}
 export const AuthContextProvider = (props) => {
+  
   const initialRole = localStorage.getItem('role')
   const initialToken = localStorage.getItem('token')
   const initialName = localStorage.getItem('name')
@@ -26,15 +34,18 @@ export const AuthContextProvider = (props) => {
     localStorage.removeItem('token')
     localStorage.removeItem('name')
     localStorage.removeItem('role')
+
   };
-  const loginHandler = (token, name, role) => {
+  const loginHandler = (token, name, role, expirationTime) => {
     setToken(token);
     setUserName(name);
     setRole(role);
-
     localStorage.setItem('name', name)
     localStorage.setItem('token', token)
     localStorage.setItem('role', role)
+    const remainingTime = calculateRemainingTime(expirationTime)
+    console.log(remainingTime)
+    setTimeout(logoutHandler, remainingTime)
   };
   const contextValue = {
     token:token,
