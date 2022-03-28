@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-
+import Cookies from 'universal-cookie'
 const AuthContext = React.createContext({
   token: "",
-  isLoggenIn: false,
+  isLoggedIn: false,
   name: "",
   logout: () => {},
   logIn: (token,name, role, expirationTime) => {},
   role: "",
   expiresIn: "",
 });
+const cookies = new Cookies()
 // const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
 const calculateRemainingTime = (expirationTime) =>{
   const currentTime = new Date().getTime();
@@ -18,9 +19,9 @@ const calculateRemainingTime = (expirationTime) =>{
 }
 export const AuthContextProvider = (props) => {
   
-  const initialRole = localStorage.getItem('role')
-  const initialToken = localStorage.getItem('token')
-  const initialName = localStorage.getItem('name')
+  const initialRole = cookies.get('role')
+  const initialToken = cookies.get('token')
+  const initialName = cookies.get('name')
   const [role, setRole] = useState(initialRole)
   const [token, setToken] = useState(initialToken);
   const [userName, setUserName] = useState(initialName);
@@ -31,18 +32,18 @@ export const AuthContextProvider = (props) => {
     setUserName(null);
     setToken(null);
     setRole(null);
-    localStorage.removeItem('token')
-    localStorage.removeItem('name')
-    localStorage.removeItem('role')
+    cookies.remove('token')
+    cookies.remove('name')
+    cookies.remove('role')
 
   };
   const loginHandler = (token, name, role, expirationTime) => {
     setToken(token);
     setUserName(name);
     setRole(role);
-    localStorage.setItem('name', name)
-    localStorage.setItem('token', token)
-    localStorage.setItem('role', role)
+    cookies.set('name', name, {path:'/'})
+    cookies.set('token', token, {path:'/'})
+    cookies.set('role', role, {path:'/'})
     const remainingTime = calculateRemainingTime(expirationTime)
     console.log(remainingTime)
     setTimeout(logoutHandler, remainingTime)

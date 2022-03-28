@@ -32,7 +32,7 @@ const ProductForm = () => {
   };
   return (
     <>
-      <Container className="bg-dark pt-3 pb-4 mt-1 mb col-lg-6 rounded">
+      <Container className="bg-dark pt-3 pb-4 mb col-lg-6 rounded">
         <Form onSubmit={submitHandler} ref={inputRef}>
           <FloatingLabel
             controlId="name"
@@ -75,7 +75,7 @@ const ProductForm = () => {
             controlId="special"
             label="Características especiales"
           >
-            <Form.Control name="special" required></Form.Control>
+            <Form.Control name="special"></Form.Control>
           </FloatingLabel>
 
           <FloatingLabel
@@ -90,11 +90,11 @@ const ProductForm = () => {
             ></Form.Control>
             <Form.Group className="mb-1" controlId="file">
               <Form.Label>Subir imagen</Form.Label>
-              <Form.Control type="file" name="file"></Form.Control>
+              <Form.Control type="file" name="file" required></Form.Control>
             </Form.Group>
           </FloatingLabel>
           <FloatingLabel className="mb-1 " controlId="stock" label="Stock">
-            <Form.Control name="stock" type="number" required></Form.Control>
+            <Form.Control name="stock" type="number"></Form.Control>
           </FloatingLabel>
 
           <Button type="submit">Crear Producto</Button>

@@ -1,13 +1,15 @@
 import { Container, Button, Col, Row, Image } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import CartContext from "../Store/cart-context";
+import Loading from "../UI/Loading";
 const ProductPage = (props) => {
   const cartCtx = useContext(CartContext);
   const amount = 1;
 
   let { id } = useParams();
+  let [loading, setLoading] = useState(false);
   const [item, setItem] = useState({
     success: false,
     product: {},
@@ -15,20 +17,21 @@ const ProductPage = (props) => {
 
   useEffect(() => {
     const peticionGet = async () => {
+      setLoading(true)
       await axios
         .get(`http://localhost:5000/api/product/${id}`)
         .then((response) => {
-          console.log(response.data);
           setItem(response.data);
+          setLoading(false)
         })
         .catch((error) => {
           console.log(error);
+          setLoading(false)
         });
     };
     peticionGet();
   }, [id]);
   const addToCartHandler = () => {
-    console.log(item);
     cartCtx.addItem({
       id: item.product._id,
       name: item.product.name,
@@ -40,13 +43,15 @@ const ProductPage = (props) => {
     });
   };
 
+
   return (
     <>
       {item.success !== false && (
-        <Container className="mt-3">
+        <Container className="mt-3 bg-white signup-margin" >
           <Row className="mt-3">
-            <Col>
-              TIENDA / {item.product.category.toUpperCase()} /{" "}
+            <Col  className='text-decoration-none text-secondary' ><NavLink className='text-decoration-none text-secondary' to='/search'>
+              TIENDA </NavLink> / <NavLink className='text-decoration-none text-secondary' to={`/category/${item.product.category}`}>
+               {item.product.category.toUpperCase()}</NavLink>  /{" "}
               {item.product.subCat.toUpperCase()}
             </Col>
           </Row>
@@ -82,8 +87,9 @@ const ProductPage = (props) => {
               </Row>
             </Col>
           </Row>
+          
         </Container>
-      ) }
+      ) }{loading === true && <Loading/>} 
     </>
   );
 };
