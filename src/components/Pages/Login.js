@@ -4,6 +4,7 @@ import axios from "axios";
 import AuthContext from "../context/auth-context";
 import { NavLink } from "react-router-dom";
 import Loading from "../UI/Loading";
+import './Login.css'
 
 const Login = () => {
   const authCtx = useContext(AuthContext);
@@ -40,9 +41,10 @@ const Login = () => {
   
     }
   };
-  return (
-    <Container className="col-lg-6 bg-dark text-light rounded pt-2 footer-padding">
-      <Form onSubmit={hanldeSubmit}>
+  return (<>
+  <Container className=" login-css">
+    <Container className="col-6 col-sm-5 text-light footer-padding position-relative">
+      <Form className="pt-5" onSubmit={hanldeSubmit}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Correo eléctronico</Form.Label>
           <Form.Control
@@ -63,7 +65,7 @@ const Login = () => {
           />
         </Form.Group>
       <Row><Col>
-        <Button variant="primary" className="mb-3" type="submit">
+        <Button variant="secondary" className="mb-3" type="submit">
           Inicia sesión
         </Button></Col>{message && <Col className='text-danger'>{message}</Col>}</Row>
       </Form>
@@ -71,7 +73,7 @@ const Login = () => {
       <NavLink className="text-light text-decoration-none" to="/registro">¿No estás registrado?  Crea tu cuenta aquí</NavLink>
       </Nav>
       {loading === true && <Loading/>}
-    </Container>
+    </Container></Container></>
   );
 };
 

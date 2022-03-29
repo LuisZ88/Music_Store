@@ -21,7 +21,7 @@ const ProductCard = (props) => {
     <>
       <Container
         style={{ height: "25vh" }}
-        className="border pb-2 pt-2 rounded  bg-white"
+        className="border pb-2 pt-2 rounded  bg-white fw-bold"
       >
         <Row style={{ height: "40%" }}>
           <Image
@@ -43,12 +43,12 @@ const ProductCard = (props) => {
           </Col>
         </Row>
         <Row style={{ height: "30%" }}>
-          <Col className="">
+          <Col >
             <p style={{ maxHeight: "100%", objectFit: "contain" }}>{name}</p>
           </Col>
         </Row>
         <Row style={{ height: "5%" }}>
-          <Col className="text-muted font-italic">{trademark} </Col>
+          <Col className="text-muted font-italic ">{trademark} </Col>
           <Col className="text-end">{price} €</Col>
         </Row>
       </Container>

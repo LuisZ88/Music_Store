@@ -1,0 +1,29 @@
+.login-css{
+    padding-top: 15%;
+    background: url('https://res.cloudinary.com/pruebasmern/image/upload/v1648543772/LOGIN_mbcs1j.png') ;
+    background-position: center top;
+    min-height: 100vh;
+}
+@media (max-width: 1000px) {
+    .login-css{
+        padding-top: 35%;
+    }
+  }
+  .signup-css{
+    padding-top: 15%;
+    background: url('https://res.cloudinary.com/pruebasmern/image/upload/v1648545069/3_azzcb1.png') ;
+    background-position: center top;
+    min-height: 100vh;
+}
+@media (max-width: 1000px) {
+    .signup-css{
+        padding-top: 30%;
+    }
+  }
+
+@media (max-width: 736px) {
+    .signup-css{
+        padding-top: 50%;
+    }
+  }
+

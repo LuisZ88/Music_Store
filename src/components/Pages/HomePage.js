@@ -1,56 +1,21 @@
-import { useState } from 'react';
-import {Col,Image, Carousel, Container} from 'react-bootstrap'
+
+import {Image,} from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 const HomePage =()=>{
-
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-      };
-      const [index, setIndex] = useState(0);
+const navigate =useNavigate()
+const goTo =()=>{
+  navigate('/search')
+}
+   
 return(
-<Container className='m-auto' style={{ maxWidth: "100vh" }}>
 
-  <Carousel activeIndex={index} onSelect={handleSelect}>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://res.cloudinary.com/pruebasmern/image/upload/v1648489589/Music%20Shop/ezdk9nuux3pt7wcbw49w.jpg"
-        alt="First slide"
-      />
-      <Carousel.Caption className='text-dark'>
-        <h3>SBM1BF
-</h3>
-        <p>Las bajos eléctricos SX tienen fama de ser los mejores valorados e imbatibles por su precio.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://res.cloudinary.com/pruebasmern/image/upload/v1648489007/Music%20Shop/dks4cljfn8g9nqaikksn.png"
-        alt="Second slide"
-      />
+  <><div style={{ maxHeight: "100vh" }}className='d-none d-md-flex justify-content-center'>
+  <Image className='' fluid style={{ maxHeight: "100vh", objectFit: "contain" }} src='https://res.cloudinary.com/pruebasmern/image/upload/v1648540503/Music%20Shop/Front_page_nemctc.png' onClick={goTo}/>
+  </div>
+  <div style={{ maxHeight: "100vh" }}className='d-flex justify-content-center d-md-none'>
+  <Image className='' fluid style={{ maxHeight: "100vh", objectFit: "contain" }} src='https://res.cloudinary.com/pruebasmern/image/upload/v1648548774/wallsm_awzcg8.png' onClick={goTo}/>
+  </div></>)}
 
-      <Carousel.Caption>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://res.cloudinary.com/pruebasmern/image/upload/v1648489805/Music%20Shop/kuvu5iyqkteegtuufhud.jpg"
-        alt="Third slide"
-      />
-
-      <Carousel.Caption>
-        <h3>Third slide label</h3>
-        <p>
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-        </p>
-      </Carousel.Caption>
-    </Carousel.Item>
-  </Carousel>
-
-</Container>)}
 
 
 

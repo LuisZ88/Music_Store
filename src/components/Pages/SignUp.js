@@ -42,8 +42,9 @@ const SignUp = () => {
       setLoading(false)
     }
   };
-  return (
-    <Container className="col-lg-6 bg-dark text-light rounded signup-margin pt-3 pb-2">
+  return (<>
+    <Container className=" signup-css">
+    <Container className="col-6 col-sm-5 text-light footer-padding position-relative ">
       <Form onSubmit={hanldeSubmit}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Nombre</Form.Label>
@@ -82,7 +83,7 @@ const SignUp = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Row><Col><Button variant="primary" className="mb-3" type="submit">
+        <Row><Col><Button variant="secondary" className="mb-3" type="submit">
           Registrarse
         </Button>
         </Col>{message && <Col className='text-danger'>{message}</Col>}</Row>
@@ -93,7 +94,7 @@ const SignUp = () => {
 
 
       {message ? <ModalCard content={message} className="bg-light"></ModalCard> : <></>}
-    </Container>
+    </Container></Container></>
   );
 };
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductList from "../Products/ProductList";
 import { FormControl, Button, Form, Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
 import Loading from "../UI/Loading";
 const SearchBar = (props) => {
   const [products, setProducts] = useState(null);
@@ -62,7 +61,7 @@ const SearchBar = (props) => {
         return {
           elemento
           };
-    });
+  });
     setLoading(false)
     setProducts({ success: true, products: resultadoBusqueda });
   };

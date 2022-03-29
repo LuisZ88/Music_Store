@@ -1,8 +1,10 @@
 body {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
     
   }
   .root{
     min-height: 100vh;
     background: rgba(0, 0, 0, 0.192);
+    font-family: 'Source Sans Pro', sans-serif;
   }
+  

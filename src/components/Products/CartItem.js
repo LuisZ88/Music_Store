@@ -9,8 +9,7 @@ const CartItem = (props) => {
       {cartCtx.items.map((item) => (
         <Row
           key={item.id}
-          style={{ height: "40%", width: "100%" }}
-          className=" border pt-2 pb-2"
+          className=" border2 bg-white rounded mt-1 m-auto"
         >
           <Col className="text-center" xs={2} style={{ maxWidth: "40%" }}>
             <Image

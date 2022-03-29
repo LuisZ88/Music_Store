@@ -49,7 +49,7 @@ const ProductPage = (props) => {
       {item.success !== false && (
         <Container className="mt-3 bg-white signup-margin" >
           <Row className="mt-3">
-            <Col  className='text-decoration-none text-secondary' ><NavLink className='text-decoration-none text-secondary' to='/search'>
+            <Col  className='text-decoration-none text-secondary fs-5' ><NavLink className='text-decoration-none text-secondary' to='/search'>
               TIENDA </NavLink> / <NavLink className='text-decoration-none text-secondary' to={`/category/${item.product.category}`}>
                {item.product.category.toUpperCase()}</NavLink>  /{" "}
               {item.product.subCat.toUpperCase()}
@@ -67,13 +67,13 @@ const ProductPage = (props) => {
               <Row className="text-muted mt-3 fs-4"><Col>
                 {item.product.trademark}
                 </Col></Row>
-              <Row className=" fs-2 mt-3">
+              <Row className=" fs-2 mt-3 fw-bold">
                 <Col>{item.product.name}</Col>
               </Row>
               <Row className="text-start mt-3">
                 <Col>{item.product.description}</Col>
               </Row>
-              <Row className=" fs-2 mt-3">
+              <Row className=" fs-2 mt-3 fw-bold">
                 <Col>{item.product.price} €</Col>
                 <Col className="text-end">
                   <Button
