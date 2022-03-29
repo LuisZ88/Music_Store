@@ -6,5 +6,6 @@ body {
     min-height: 100vh;
     background: rgba(0, 0, 0, 0.192);
     font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
   }
   
