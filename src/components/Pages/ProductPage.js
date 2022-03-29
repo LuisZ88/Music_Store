@@ -1,12 +1,15 @@
 import { Container, Button, Col, Row, Image } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import CartContext from "../Store/cart-context";
 import Loading from "../UI/Loading";
+import AuthContext from "../context/auth-context";
 const ProductPage = (props) => {
   const cartCtx = useContext(CartContext);
   const amount = 1;
+  const authCtx = useContext(AuthContext)
+  const navigate = useNavigate()
 
   let { id } = useParams();
   let [loading, setLoading] = useState(false);
@@ -42,7 +45,13 @@ const ProductPage = (props) => {
       subCat: item.product.subCat
     });
   };
-
+  const deleteItemFromDB = async()=>{
+    await axios
+    .delete(`${process.env.REACT_APP_BACKEND}api/product/${id}`,{
+      headers: { Authorization: authCtx.token }}
+    )
+    .then(navigate('/search'))
+  }
 
   return (
     <>
@@ -75,6 +84,12 @@ const ProductPage = (props) => {
               </Row>
               <Row className=" fs-2 mt-3 fw-bold">
                 <Col>{item.product.price} €</Col>
+                {authCtx.role === 'admin' && <Col><Button
+                    variant="danger"
+                    type="button"
+                    onClick={deleteItemFromDB}
+                  > Eliminar de DB
+                  </Button></Col>}
                 <Col className="text-end">
                   <Button
                     variant="secondary"
