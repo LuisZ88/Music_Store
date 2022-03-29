@@ -32,7 +32,6 @@ const Login = () => {
     if (response.data.success === true) {
       const expirationTime = new Date((new Date().getTime()+ (+response.data.expiresIn) * 1000))
       authCtx.logIn(response.data.token, response.data.name, response.data.role, expirationTime.toISOString());
-      console.log(response.data)
       setLoading(false);
     }
     if (response.data.success === false) {

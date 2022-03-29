@@ -45,7 +45,6 @@ export const AuthContextProvider = (props) => {
     cookies.set('token', token, {path:'/'})
     cookies.set('role', role, {path:'/'})
     const remainingTime = calculateRemainingTime(expirationTime)
-    console.log(remainingTime)
     setTimeout(logoutHandler, remainingTime)
   };
   const contextValue = {

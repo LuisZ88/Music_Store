@@ -37,7 +37,7 @@ const SignUp = () => {
       setLoading(false)
     }
     if (response.data.success === false) {
-      console.log(response.data);
+      
       setMessage(response.data.message);
       setLoading(false)
     }

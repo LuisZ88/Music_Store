@@ -17,7 +17,6 @@ const ProductForm = () => {
   const inputRef = useRef();
   const submitHandler = async (event) => {
     event.preventDefault();
-    console.log(event.target);
     let form = new FormData(event.target);
     info = await axios.post(`${process.env.REACT_APP_BACKEND}api/product`,form,
       {
@@ -27,7 +26,6 @@ const ProductForm = () => {
         },
       });
     setInfo(info.data.newProduct);
-    console.log(info);
     inputRef.current.reset();
   };
   return (
