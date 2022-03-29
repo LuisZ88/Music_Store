@@ -12,7 +12,7 @@ const PrivateAdmin = () => {
   let [loading, setLoading] = useState(true);
   const verify = async () => {
     try {
-      let x = await axios.get("http://localhost:5000/api/auth/validateAdmin", {
+      let x = await axios.get(`${process.env.BACKEND}api/auth/validateAdmin`, {
         headers: { Authorization: authCtx.token }, });
       setInfo(x.data);
       setLoading(false);

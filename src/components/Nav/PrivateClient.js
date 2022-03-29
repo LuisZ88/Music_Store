@@ -11,7 +11,7 @@ const PrivateClient = () => {
   let [loading, setLoading] = useState(true);
   const verify = async () => {
     try {
-      x = await axios.get("http://localhost:5000/api/auth/validateUser", {
+      x = await axios.get(`${process.env.BACKEND}api/auth/validateUser`, {
         headers: { Authorization: authCtx.token },
       });
       setInfo(x.data);

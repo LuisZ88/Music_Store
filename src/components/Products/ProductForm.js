@@ -19,7 +19,7 @@ const ProductForm = () => {
     event.preventDefault();
     console.log(event.target);
     let form = new FormData(event.target);
-    info = await axios.post("http://localhost:5000/api/product",form,
+    info = await axios.post(`${process.env.BACKEND}api/product`,form,
       {
         headers: {
           Authorization: authCtx.token,

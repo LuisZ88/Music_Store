@@ -26,7 +26,7 @@ const Login = () => {
     setLoading(true);
     event.preventDefault();
     const response = await axios.post(
-      "http://localhost:5000/api/auth/login",
+      `${process.env.BACKEND}api/auth/login`,
       formInfo
     );
     if (response.data.success === true) {

@@ -17,7 +17,7 @@ let navigate = useNavigate()
 
   };
   const updateInvoice = async () => {
-    await axios.put("http://localhost:5000/api/auth/updateInvoice", invoice, {
+    await axios.put(`${process.env.BACKEND}auth/updateInvoice`, invoice, {
       headers: {
         Authorization: authCtx.token,
       },

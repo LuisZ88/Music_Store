@@ -13,7 +13,7 @@ const SearchBar = (props) => {
     setLoading(true)
     const peticionGet = async () => {
       await axios
-        .get("http://localhost:5000/api/product")
+        .get(`${process.env.BACKEND}api/product`)
         .then((response) => {
           setProducts(response.data);
           setTablaProducts(response.data);
