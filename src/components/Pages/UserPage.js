@@ -38,10 +38,10 @@ const UserPage = () => {
   }, []);
 
   return (
-    <>
-    <h1 className="text-center">Pedidos de {userData.name}</h1>
+    <><Container className="invoice">
+    <h1 className="text-center text-white">Pedidos de {userData.name}</h1>
       {userData.invoices.map((item) => (
-        <Container key={item.id} className="mb-5 border pb-3 rounded invoice" style={{width: '80vw'}}>
+        <Container key={item.id} className="mb-5 border pb-3 rounded " style={{width: '70vw'}}>
           <Row className="" >
             <Col xs="5">Fecha</Col>
             <Col xs="2">Total</Col>
@@ -73,6 +73,7 @@ const UserPage = () => {
           ))}
           </Container>
       ))}
+      </Container>
     </>
   );
 };

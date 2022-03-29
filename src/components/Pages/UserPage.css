@@ -1,7 +1,6 @@
 .invoice{
     background: url('https://res.cloudinary.com/pruebasmern/image/upload/v1648547867/Fondo_u92gpj.png');
-    min-height: 100vh;
-    min-height: 100vh;
+    min-height: 90vh;
     color: white;
 }
 .invoice-item{
