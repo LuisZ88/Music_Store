@@ -9,7 +9,7 @@ export default function PaypalButton() {
 let navigate = useNavigate()
   const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
-  const invoice ={
+  const invoice = {
     totalAmount: cartCtx.totalAmount,
     items: cartCtx.items,
     id: '',
