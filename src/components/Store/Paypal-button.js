@@ -17,7 +17,7 @@ let navigate = useNavigate()
 
   };
   const updateInvoice = async () => {
-    await axios.put(`${process.env.REACT_APP_BACKEND}auth/updateInvoice`, invoice, {
+    await axios.put(`${process.env.REACT_APP_BACKEND}api/auth/updateInvoice`, invoice, {
       headers: {
         Authorization: authCtx.token,
       },
