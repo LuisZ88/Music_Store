@@ -13,7 +13,7 @@ const SearchBar = (props) => {
     setLoading(true)
     const peticionGet = async () => {
       await axios
-        .get(`${process.env.BACKEND}api/product`)
+        .get(`https://musicalia-back.herokuapp.com/api/product`)
         .then((response) => {
           setProducts(response.data);
           setTablaProducts(response.data);
