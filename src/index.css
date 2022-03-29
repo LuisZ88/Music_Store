@@ -6,13 +6,6 @@ body {
     min-height: 100vh;
     background: rgba(0, 0, 0, 0.192);
     font-family: 'Source Sans Pro', sans-serif;
-    overflow: auto;
-    padding-right: 20px;
-    height: 100%;
-    width: 100%;
-  }
-  #container1{
-    height: 100%;
-    width: 100%;
     overflow: hidden;
-}
+  }
+  
