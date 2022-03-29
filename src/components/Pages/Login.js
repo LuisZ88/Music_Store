@@ -26,7 +26,7 @@ const Login = () => {
     setLoading(true);
     event.preventDefault();
     const response = await axios.post(
-      `${process.env.BACKEND}api/auth/login`,
+      `https://musicalia-back.herokuapp.com/api/auth/login`,
       formInfo
     );
     if (response.data.success === true) {
