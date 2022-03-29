@@ -28,7 +28,7 @@ const SignUp = () => {
     setLoading(true)
     event.preventDefault();
     const response = await axios.post(
-      `${process.env.BACKEND}api/auth/signUp`,
+      `${process.env.REACT_APP_BACKEND}api/auth/signUp`,
       formInfo
     );
     if (response.data.success === true) {

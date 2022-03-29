@@ -86,7 +86,7 @@ const CategoryFilter = () => {
         if(id === 'guitarra'){ url = '6218af919a77f7030d41d8ad';
         setTipo(guitarra)}
       await axios
-        .get(`${process.env.BACKEND}api/category/${url}`)
+        .get(`${process.env.REACT_APP_BACKEND}api/category/${url}`)
         .then((response) => {
           setTablaProducts({
             products: response.data.category.product_id,

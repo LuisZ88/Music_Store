@@ -19,7 +19,7 @@ const ProductPage = (props) => {
     const peticionGet = async () => {
       setLoading(true)
       await axios
-        .get(`${process.env.BACKEND}api/product/${id}`)
+        .get(`${process.env.REACT_APP_BACKEND}api/product/${id}`)
         .then((response) => {
           setItem(response.data);
           setLoading(false)

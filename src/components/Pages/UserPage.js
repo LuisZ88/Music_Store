@@ -18,7 +18,7 @@ const UserPage = () => {
   useEffect(() => {
     const info = async () => {
       await axios
-        .get(`${process.env.BACKEND}api/auth/getUser`, {
+        .get(`${process.env.REACT_APP_BACKEND}api/auth/getUser`, {
           headers: {
             Authorization: authCtx.token,
             "content-type": "text/json",
