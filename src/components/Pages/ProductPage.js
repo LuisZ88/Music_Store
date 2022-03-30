@@ -56,7 +56,7 @@ const ProductPage = (props) => {
   return (
     <>
       {item.success !== false && (
-        <Container className="mt-3 bg-white signup-margin" >
+        <Container className="mt-3 bg-white " style={{minHeight:' 90vh'}}>
           <Row className="mt-3">
             <Col  className='text-decoration-none text-secondary fs-5' ><NavLink className='text-decoration-none text-secondary' to='/search'>
               TIENDA </NavLink> / <NavLink className='text-decoration-none text-secondary' to={`/category/${item.product.category}`}>

@@ -18,8 +18,8 @@ const NavBar = () => {
     navigate(`/payment`);
   };
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark" className="mb-4">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark" >
+      <Container className="shadow">
         <Nav className="justify-content-space-around">
           <NavLink
             className="text-decoration-none text-light fs-4 me-3"

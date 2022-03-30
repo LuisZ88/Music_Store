@@ -18,8 +18,7 @@ const ProductList = (props) => {
 
   return (
     <>
-      {props.datos.success === true ? (<Container>
-
+      {props.datos.success === true ? (<Container className='invoice'>
         <Row xs={1} md={2} lg={4} xl={4} className="g-4 justify-content-center ">
           {props.datos.products.slice(page*8,8*(page+1)).map((x) => (
             <Col key={x._id} >
@@ -28,7 +27,7 @@ const ProductList = (props) => {
           ))}
          
         </Row><Row className="mt-5"><Col className="text-end">
- <Button onClick={onPrevPage} >Prev</Button></Col><Col><Button onClick={onNextPage}>Next</Button></Col></Row></Container>
+ <Button onClick={onPrevPage} variant='secondary'>Prev</Button></Col><Col><Button variant='secondary' onClick={onNextPage}>Next</Button></Col></Row></Container>
       ) : (
         <></>
       )}

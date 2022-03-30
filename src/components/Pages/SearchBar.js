@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductList from "../Products/ProductList";
 import { FormControl, Button, Form, Container } from "react-bootstrap";
 import Loading from "../UI/Loading";
+import './UserPage.css'
 const SearchBar = (props) => {
   const [products, setProducts] = useState(null);
   const [tablaProducts, setTablaProducts] = useState(null);
@@ -61,6 +62,7 @@ const SearchBar = (props) => {
         return {
           elemento
           };
+          return false;
   });
     setLoading(false)
     setProducts({ success: true, products: resultadoBusqueda });
@@ -70,7 +72,7 @@ const SearchBar = (props) => {
       {loading === true ? 
         <Loading />
      : (
-        <Container>
+        <Container className="invoice pt-2">
           <Form className="d-flex mb-5 mt-2">
             <FormControl
               type="search"
@@ -81,7 +83,7 @@ const SearchBar = (props) => {
               onChange={filterChange}
               onKeyDown={enterKeyDown}
             />
-            <Button variant="outline-success" onClick={searchClick}>
+            <Button variant="secondary" onClick={searchClick}>
               Buscar
             </Button>
           </Form>

@@ -11,7 +11,7 @@ const CategoryCard = (props) => {
   return (
     <>
       {props.tipo && (
-          <Container >
+          <Container className='invoice-c'>
         <Row
           xs={3}
           md={3}

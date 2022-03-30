@@ -91,9 +91,7 @@ const ProductForm = () => {
               <Form.Control type="file" name="file" required></Form.Control>
             </Form.Group>
           </FloatingLabel>
-          <FloatingLabel className="mb-1 " controlId="stock" label="Stock">
-            <Form.Control name="stock" type="number"></Form.Control>
-          </FloatingLabel>
+          
 
           <Button type="submit">Crear Producto</Button>
         </Form>

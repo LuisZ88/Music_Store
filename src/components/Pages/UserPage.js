@@ -1,10 +1,9 @@
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/auth-context";
-import CartContext from "../Store/cart-context";
 import './UserPage.css'
-import Loading from "../UI/Loading";
+
 
 const UserPage = () => {
   const authCtx = useContext(AuthContext);
@@ -41,7 +40,7 @@ const UserPage = () => {
     <><Container className="invoice">
     <h1 className="text-center text-white">Pedidos de {userData.name}</h1>
       {userData.invoices.map((item) => (
-        <Container key={item.id} className="mb-5 border pb-3 rounded " style={{width: '70vw'}}>
+        <Container key={item.id} className="mb-5 border pb-3 rounded text-light" style={{width: '70vw'}}>
           <Row className="" >
             <Col xs="5">Fecha</Col>
             <Col xs="2">Total</Col>
