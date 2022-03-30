@@ -52,7 +52,7 @@ Admin can create new products or delete from database.
 
 ## Installation:
 ***
-1. `You need configurate the Backend` https://github.com/LuisZ88/Music_Store_backend
+1. `You need to configure the Backend` https://github.com/LuisZ88/Music_Store_backend
 2.  `$ git clone https://github.com/LuisZ88/Muscic_Store.git`
 3.  `$ cd client`
 4.  `$ npm i`
