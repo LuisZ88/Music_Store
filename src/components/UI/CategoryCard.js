@@ -7,7 +7,6 @@ const CategoryCard = (props) => {
   //     navigate(`/item/${_id}`);
   //     console.log("clicked");
   //   }
-
   return (
     <>
       {props.tipo && (
@@ -46,7 +45,7 @@ const CategoryCard = (props) => {
           ))}
         </Row></Container>
       )}
-       {!props.datos ? <Loading/>: <ProductList datos={props.datos}/>}
+       {props.datos && <ProductList datos={props.datos}/>}
     </>
   );
 };

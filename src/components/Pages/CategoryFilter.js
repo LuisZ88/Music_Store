@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState,} from "react";
 import { useParams } from "react-router-dom";
 import CategoryCard from "../UI/CategoryCard";
+import Loading from "../UI/Loading";
 import "./UserPage.css";
 const guitarra = [
   {
@@ -69,6 +70,7 @@ const CategoryFilter = () => {
   let  {id}  = useParams();
   const [tablaProducts, setTablaProducts] = useState(null);
   const [products, setProducts] = useState(null);
+  const [loader, setLoader] = useState(true)
   
   const [tipo, setTipo] = useState(null)
   useEffect(() => {
@@ -87,6 +89,7 @@ const CategoryFilter = () => {
       await axios
         .get(`${process.env.REACT_APP_BACKEND}api/category/${url}`)
         .then((response) => {
+          
           setTablaProducts({
             products: response.data.category.product_id,
             success: true,
@@ -95,13 +98,14 @@ const CategoryFilter = () => {
             products: response.data.category.product_id,
             success: true,
           });
-        
+          setLoader(false)
         })
     
     };
     peticionGet();
   }, [id]);
   const search = (busqueda) => {
+    setLoader(true)
     let resultadoBusqueda = tablaProducts.products.filter((elemento) => {
       if (
         elemento.subCat
@@ -113,11 +117,12 @@ const CategoryFilter = () => {
         return false;
     });
     setProducts({ success: true, products: resultadoBusqueda });
+    setLoader(false)
     
   };
   return (
     <>
-      <CategoryCard tipo={tipo} filtrar={search} datos={products}/>{" "}
+      {loader === true ? <Loading/> : <CategoryCard tipo={tipo} filtrar={search} datos={products}/>}
      
     </>
   );

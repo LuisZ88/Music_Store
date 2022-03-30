@@ -62,7 +62,7 @@ const SearchBar = (props) => {
         return {
           elemento
           };
-          return false;
+          return setLoading(false);
   });
     setLoading(false)
     setProducts({ success: true, products: resultadoBusqueda });
