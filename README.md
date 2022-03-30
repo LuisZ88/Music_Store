@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Musicalia is React and Node.js  project based eCommerce platform.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive musical instrument store built from the beggining.
+The tools I have used:
+- Axios to connect to database.
+- Paypal sandbox tool for testing payments.
+- React-bootstrap for desing.
+- React universal-cookies.
+- Different react hooks, like useReducer or useContext.
 
-## Available Scripts
 
-In the project directory, you can run:
+<a href="https://getbootstrap.com/" target="_blank"> <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="40" height="40"/> </a>
+<a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" width="40" height="40"/> </a>
+<a href="https://git-scm.com/" target="_blank"> <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" width="40" height="40"/> </a>
+<a href="https://github.com/" target="_blank"> <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40"/> </a>
+<a href="https://www.heroku.com/" target="_blank"> <img src="https://brand.heroku.com/static/media/heroku-logo-stroke-gradient.bb410472.svg" alt="Heroku" width="40" height="40"/> </a>
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" width="40" height="40"/> </a>
+<a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/245px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript" width="40" height="40"/> </a>
+<a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="40" height="40"/> </a>
+<a href="https://code.visualstudio.com/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png" alt="Visual Studio Code" width="40" height="40"/> </a>
 
-### `npm start`
+# Store
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Single-Page Application with React server-side rendering.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Online Demo Store](https://musicalia-store.herokuapp.com/)
+## Homepage
+***
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657075/Readme-music/Homepage_wzdccs.png)
+## Product pages
+***
+With filters for category or search bar.
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657074/Readme-music/CategoryFilter_aqnlpm.png)
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657075/Readme-music/Search_szjv6v.png)
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657074/Readme-music/Product_be8ysd.png)
+## Login / Register
+***
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657074/Readme-music/Login_th5xni.png)
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657075/Readme-music/Register_bwt2gv.png)
 
-### `npm test`
+## Admin settings
+***
+Admin can create new products or delete from database.
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657188/Readme-music/NewProduct_d04fon.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657075/Readme-music/adminview_oxzhiw.png)
+## Cart and Userpage
+***
+![Image-text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657074/Readme-music/Invoice_zhi0rk.png)
+![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657074/Readme-music/Cart_ncdlwa.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation:
+***
+1. `You need configurate the Backend` https://github.com/LuisZ88/Music_Store_backend
+2.  `$ git clone https://github.com/LuisZ88/Muscic_Store.git`
+3.  `$ cd client`
+4.  `$ npm i`
+5. `You need create a .env file with this variables:` REACT_APP_IDP=yourPaypalSandboxAppKey   REACT_APP_BACKEND=YourBackEndLink
+6. `npm start`
+ 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

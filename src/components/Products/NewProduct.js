@@ -11,7 +11,7 @@ import ProductCard from "./ProductCard";
 import ModalCard from "../UI/ModalCard";
 import AuthContext from "../context/auth-context";
 
-const ProductForm = () => {
+const NewProduct = () => {
   const authCtx = useContext(AuthContext);
   let [info, setInfo] = useState();
   const inputRef = useRef();
@@ -30,7 +30,8 @@ const ProductForm = () => {
   };
   return (
     <>
-      <Container className="bg-dark pt-3 pb-4 mb col-lg-6 rounded">
+      <Container className="pt-3 pb-4 mb col-lg-6 rounded invoice">
+        <p className="text-light fw-bold"> Crear nuevo producto</p>
         <Form onSubmit={submitHandler} ref={inputRef}>
           <FloatingLabel
             controlId="name"
@@ -93,7 +94,7 @@ const ProductForm = () => {
           </FloatingLabel>
           
 
-          <Button type="submit">Crear Producto</Button>
+          <Button type="submit" variant='secondary'>Crear Producto</Button>
         </Form>
       </Container>
       {info !== undefined && (
@@ -105,4 +106,4 @@ const ProductForm = () => {
   );
 };
 
-export default ProductForm;
+export default NewProduct;

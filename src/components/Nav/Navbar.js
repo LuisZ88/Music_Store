@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "./Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../context/auth-context";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
 import CartContext from "../Store/cart-context";
 
 const NavBar = () => {
@@ -23,7 +23,7 @@ const NavBar = () => {
         <Nav className="justify-content-space-around">
           <NavLink
             className="text-decoration-none text-light fs-4 me-3"
-            to="/home"
+            to="/"
           >
             <img
               alt=""
@@ -61,7 +61,7 @@ const NavBar = () => {
           </Nav>
         )}
         <Navbar.Collapse id="responsive-navbar-nav">
-          {" "}
+   
           <NavLink to="/category/teclado" className="NavLink_drop">
             Teclados
           </NavLink>
@@ -135,28 +135,30 @@ const NavBar = () => {
             
           </>
         ) : (
-          <Nav className="justify-content-center">
-            <Nav>
-              <NavLink
-                to="/login"
-                className="text-decoration-none text-light d-none d-lg-inline-block"
-              >
-                <img
+          <Nav className="d-none d-flex d-lg-flex">
+             <Image
                   alt=""
                   src="https://res.cloudinary.com/pruebasmern/image/upload/v1647951048/Music%20Shop/iniciar-sesion_ixut5c.png"
                   width="30"
                   height="30"
-                />{" "}
+                  className="me-1"
+                />
+            <Nav>
+              <NavLink
+                to="/login"
+                className="text-decoration-none text-light "
+              >
+               
                 Iniciar sesión
-              </NavLink>{" "}
+              </NavLink>
             </Nav>
             <Nav>
               <NavLink
                 to="/registro"
-                className="text-decoration-none text-light d-none d-lg-inline-block me-3"
+                className="text-decoration-none text-light"
               >
                 {"  |  "}
-                Registrarse
+                Registro
               </NavLink>
             </Nav>
           </Nav>

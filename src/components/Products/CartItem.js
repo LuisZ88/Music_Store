@@ -7,7 +7,7 @@ const CartItem = (props) => {
   return (
     <>
       {cartCtx.items.map((item) => (
-        <Row
+        <Row  style={{ maxWidth: "80%" }}
           key={item.id}
           className=" border2 bg-white rounded mt-1 m-auto"
         >

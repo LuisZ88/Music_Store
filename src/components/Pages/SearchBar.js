@@ -8,7 +8,7 @@ const SearchBar = (props) => {
   const [products, setProducts] = useState(null);
   const [tablaProducts, setTablaProducts] = useState(null);
   const [filter, setFilter] = useState("");
-  let [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true)

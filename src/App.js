@@ -1,7 +1,7 @@
 import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Nav/Navbar";
-import ProductForm from "./components/Products/ProductForm";
+import NewProduct from "./components/Products/NewProduct";
 import NotFound from "./components/Pages/NotFound";
 import ProductList from "./components/Products/ProductList";
 import SearchBar from "./components/Pages/SearchBar";
@@ -24,6 +24,7 @@ function App() {
     <CartProvider>
       <Navbar />
       <Routes>
+      <Route path="/" element={<HomePage />}></Route>
         <Route
           path="/"
           element={
@@ -33,7 +34,7 @@ function App() {
           <Route path="/user" element={<UserPage />}></Route>
         </Route>
         <Route path="/admin" element={<PrivateAdmin />}>
-          <Route path="/admin/newproduct" element={<ProductForm />}></Route>
+          <Route path="/admin/newproduct" element={<NewProduct />}></Route>
         </Route>
         <Route
           path="/registro"
@@ -50,7 +51,7 @@ function App() {
         <Route path="/product/" element={<ProductList />}></Route>
         <Route path="/search" element={<SearchBar />}></Route>
         <Route path="/category/:id" element={<CategoryFilter />}></Route>
-        <Route path="/home" element={<HomePage />}></Route>
+        
         <Route
           path="/login"
           element={

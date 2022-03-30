@@ -11,13 +11,12 @@ const CartCheckout = () => {
     <>
       {cartCtx.totalAmount !== 0 ? (
         <>
-          <Container className="mt-3 pt-2 cart-checkout rounded">
+          <Container className="mt-3 pt-4 cart-checkout rounded">
             <CartItem />
-            <Row className="fs-2">
-              <Col className="me-2 text-white text-end">
-                Precio total: {cartCtx.totalAmount}€
-              </Col>
-            </Row><Row><Col><PaypalButton /></Col></Row>
+            <Row className="fs-2 pt-2 center m-auto " style={{maxWidth: '80vh'}}>
+            <Col className='ms-4'><PaypalButton /></Col><Col className="me-4 text-white text-end">
+                Total: {cartCtx.totalAmount}€
+              </Col></Row>
           </Container>          
   
           

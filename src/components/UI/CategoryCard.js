@@ -1,12 +1,8 @@
 import { Container, Image, Row, Col } from "react-bootstrap";
 import ProductList from "../Products/ProductList";
-import Loading from "./Loading";
 const CategoryCard = (props) => {
 
-  //   const goTo = () => {
-  //     navigate(`/item/${_id}`);
-  //     console.log("clicked");
-  //   }
+
   return (
     <>
       {props.tipo && (
