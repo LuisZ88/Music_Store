@@ -19,6 +19,15 @@ The tools I have used:
 <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="40" height="40"/> </a>
 <a href="https://code.visualstudio.com/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png" alt="Visual Studio Code" width="40" height="40"/> </a>
 
+## Installation:
+***
+1. `You need to configure the Backend` https://github.com/LuisZ88/Music_Store_backend
+2.  `$ git clone https://github.com/LuisZ88/Muscic_Store.git`
+3.  `$ cd client`
+4.  `$ npm i`
+5. `You need create a .env file with this variables:` REACT_APP_IDP=yourPaypalSandboxAppKey   REACT_APP_BACKEND=YourBackEndLink
+6. `npm start`
+
 # Store
 
 Single-Page Application with React server-side rendering.
@@ -50,14 +59,7 @@ Admin can create new products or delete from database.
 ![Image text](https://res.cloudinary.com/pruebasmern/image/upload/v1648657074/Readme-music/Cart_ncdlwa.png)
 
 
-## Installation:
-***
-1. `You need to configure the Backend` https://github.com/LuisZ88/Music_Store_backend
-2.  `$ git clone https://github.com/LuisZ88/Muscic_Store.git`
-3.  `$ cd client`
-4.  `$ npm i`
-5. `You need create a .env file with this variables:` REACT_APP_IDP=yourPaypalSandboxAppKey   REACT_APP_BACKEND=YourBackEndLink
-6. `npm start`
+
  
 
  
