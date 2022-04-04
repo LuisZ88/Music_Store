@@ -24,11 +24,15 @@ function App() {
     <CartProvider>
       <Navbar />
       <Routes>
-      <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
         <Route
           path="/"
           element={
-            authCtx.isLoggedIn === true ? <PrivateClient /> : <Navigate to="/login" />
+            authCtx.isLoggedIn === true ? (
+              <PrivateClient />
+            ) : (
+              <Navigate to="/login" />
+            )
           }
         >
           <Route path="/user" element={<UserPage />}></Route>
@@ -51,25 +55,16 @@ function App() {
         <Route path="/product/" element={<ProductList />}></Route>
         <Route path="/search" element={<SearchBar />}></Route>
         <Route path="/category/:id" element={<CategoryFilter />}></Route>
-        
+
         <Route
           path="/login"
           element={
             authCtx.isLoggedIn === false ? <Login /> : <Navigate to="/search" />
           }
         ></Route>
-        <Route
-          path="/payment"
-          element={
-            authCtx.isLoggedIn === false ? (
-              <Navigate to="/login" />
-            ) : (
-              <CartCheckout />
-            )
-          }
-        ></Route>
+        <Route path="/payment" element={<CartCheckout />}></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </CartProvider>
   );
 }
