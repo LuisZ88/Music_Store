@@ -1,10 +1,11 @@
 import PaypalButton from "../Store/Paypal-button";
 import { useContext } from "react";
-import { Container, Row, Col, NavLink } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import CartContext from "../Store/cart-context";
 import CartItem from "../Products/CartItem";
 import './CartCheckout.css'
 import AuthContext from "../context/auth-context";
+import { NavLink } from "react-router-dom";
 
 const CartCheckout = () => {
   const cartCtx = useContext(CartContext);
