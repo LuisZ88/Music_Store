@@ -62,22 +62,22 @@ const NavBar = () => {
         )}
         <Navbar.Collapse id="responsive-navbar-nav">
    
-          <NavLink to="/category/teclado" className="NavLink_drop">
+          <NavLink to="/category/teclado" className={(navData)=> navData.isActive ?  "NavLink_drop fs-5 text-warning" :  "NavLink_drop" }>
             Teclados
           </NavLink>
           <NavLink
             to="/category/percusion"
-            className="NavLink_drop"
+            className={(navData)=> navData.isActive ?  "NavLink_drop fs-5 text-warning" :  "NavLink_drop" }
           >
             Percusión
           </NavLink>
-          <NavLink to="/category/guitarra" className="NavLink_drop">
+          <NavLink to="/category/guitarra" className={(navData)=> navData.isActive ?  "NavLink_drop fs-5 text-warning" :  "NavLink_drop" }>
             Guitarras
           </NavLink>
-          <NavLink to="/category/viento" className="NavLink_drop">
+          <NavLink to="/category/viento" className={(navData)=> navData.isActive ?  "NavLink_drop fs-5 text-warning" :  "NavLink_drop" }>
             Viento
           </NavLink>
-          <NavLink to="/category/bajo" className="NavLink_drop">
+          <NavLink to="/category/bajo" className={(navData)=> navData.isActive ?  "NavLink_drop fs-5 text-warning" :  "NavLink_drop" }>
             Bajos
           </NavLink>
           
