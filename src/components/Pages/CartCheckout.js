@@ -5,7 +5,7 @@ import CartContext from "../Store/cart-context";
 import CartItem from "../Products/CartItem";
 import './CartCheckout.css'
 import AuthContext from "../context/auth-context";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 
 const CartCheckout = () => {
   const cartCtx = useContext(CartContext);
@@ -22,12 +22,10 @@ const CartCheckout = () => {
               </Col></Row>
           </Container>          
   
-          
-         
         </>
-      ) : (
-        <h1>Cesta vacía</h1>
-      )}
+      ) : <Navigate to="/search" />
+        
+      }
     </>
   );
 };
